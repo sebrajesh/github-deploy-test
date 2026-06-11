@@ -1,0 +1,14 @@
+name: Deploy Project
+on: push 
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code 
+        uses: actions/checkout@v3 
+      - name: Run lint
+        run: npn run lint 
+      - name: Testing 
+        run: npm run test 
+      - name: Deploy
+        run: echo "Deploying to env..."

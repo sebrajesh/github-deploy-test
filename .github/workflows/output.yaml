@@ -1,0 +1,10 @@
+name: Output Project 
+on: issues 
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Debug: Print github context details
+        run: echo "${{ toJSON(github) }}"
+      - name: Print event details
+        run: echo "${{ toJSON(github.event) }}
